@@ -53,3 +53,9 @@ export default function App() {
   )
 }
 ```
+
+# Props
+
+- slides: Slide[]
+- callToActions?: ButtonProps[]
+- theme?: Theme
