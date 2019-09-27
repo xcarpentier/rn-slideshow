@@ -6,7 +6,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Slideshow
-        theme={{ primaryColor: 'green', primaryColorLLL: 'lightgreen' }}
+        theme={{
+          primaryColor: 'black',
+          primaryColorLLL: 'lightgrey',
+          secondaryColor: 'white',
+        }}
         callToActions={[
           { title: 'Log in', onPress: () => {} },
           { title: 'Sign in', onPress: () => {} },

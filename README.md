@@ -1,3 +1,7 @@
+<p align="center" >
+    <img alt="rn-slideshow" src="https://media.giphy.com/media/idw0sOfCHnQXA1p19O/giphy.gif" />
+</p>
+
 # rn-slideshow
 
 Slideshow with expo, theming, customizable footer, etc
