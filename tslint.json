@@ -7,6 +7,7 @@
     "object-literal-sort-keys": false,
     "variable-name": false,
     "one-variable-per-declaration": false,
-    "no-console": false
+    "no-console": false,
+    "no-empty": false
   }
 }

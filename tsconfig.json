@@ -10,7 +10,8 @@
     "lib": ["dom", "esnext"],
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "downlevelIteration": true
   },
   "exclude": ["node_modules"]
 }

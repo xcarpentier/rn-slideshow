@@ -1,11 +1,21 @@
+# rn-slideshow
+
+Slideshow with expo, theming, customizable footer, etc
+
+# Install
+
+`yarn add rn-slideshow`
+
+# Usage
+
+```tsx
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Slideshow } from './src/index'
+import { Slideshow } from 'rn-slideshow'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Slideshow
+      <OnBoard
         theme={{ primaryColor: 'green', primaryColorLLL: 'lightgreen' }}
         callToActions={[
           { title: 'Log in', onPress: () => {} },
@@ -38,9 +48,4 @@ export default function App() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
+```

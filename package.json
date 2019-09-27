@@ -2,6 +2,7 @@
   "name": "rn-slideshow",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
+  "description": "Slideshow with expo, theming, customizable footer, etc",
   "types": "lib/index.d.ts",
   "author": "Xavier Carpentier <xcapetir@gmail.com> (https://xaviercarpentier.com/)",
   "license": "MIT",
@@ -25,20 +26,23 @@
     "postpublish": "yarn config:dev"
   },
   "dependencies": {
+    "@callstack/react-theme-provider": "3.0.3",
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native-iphone-x-helper": "1.2.1",
+    "react-native-reanimated": "https://github.com/EvanBacon/react-native-reanimated#6d32a89cf8fc96d8f04f3252852b8b7427c060ad",
     "react-native-web": "^0.11.7"
   },
   "devDependencies": {
-    "prettier": "1.18.2",
-    "tslint": "5.20.0",
-    "tslint-config-prettier": "1.18.0",
     "@types/react": "^16.8.23",
     "@types/react-native": "^0.57.65",
     "babel-preset-expo": "^7.0.0",
     "json": "9.0.6",
+    "prettier": "1.18.2",
+    "tslint": "5.20.0",
+    "tslint-config-prettier": "1.18.0",
     "typescript": "^3.4.5"
   }
 }
