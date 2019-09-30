@@ -27,15 +27,15 @@
   },
   "dependencies": {
     "@callstack/react-theme-provider": "3.0.3",
+    "react-native-iphone-x-helper": "1.2.1",
+    "react-native-web": "^0.11.7",
+    "react-native-reanimated": "https://github.com/EvanBacon/react-native-reanimated#6d32a89cf8fc96d8f04f3252852b8b7427c060ad"
+  },
+  "devDependencies": {
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "react-native-iphone-x-helper": "1.2.1",
-    "react-native-reanimated": "https://github.com/EvanBacon/react-native-reanimated#6d32a89cf8fc96d8f04f3252852b8b7427c060ad",
-    "react-native-web": "^0.11.7"
-  },
-  "devDependencies": {
     "@types/react": "^16.8.23",
     "@types/react-native": "^0.57.65",
     "babel-preset-expo": "^7.0.0",
@@ -44,5 +44,11 @@
     "tslint": "5.20.0",
     "tslint-config-prettier": "1.18.0",
     "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*"
   }
 }
