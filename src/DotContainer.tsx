@@ -76,7 +76,10 @@ export function DotContainer({ slides, animatedDot }: DotContainer) {
           {slideRange.map(level => (
             <View
               key={`dot-${level}`}
-              style={[styles.dot, { backgroundColor: theme.primaryColorLLL }]}
+              style={[
+                styles.dot,
+                { backgroundColor: theme.primaryColorVariant },
+              ]}
             />
           ))}
         </Row>

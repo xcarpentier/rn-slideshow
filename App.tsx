@@ -1,19 +1,15 @@
-import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { StyleSheet, View, StatusBar } from 'react-native'
 import { Slideshow } from './src/index'
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
       <Slideshow
-        theme={{
-          primaryColor: 'black',
-          primaryColorLLL: 'lightgrey',
-          secondaryColor: 'white',
-        }}
         callToActions={[
-          { title: 'Log in', onPress: () => {} },
-          { title: 'Sign in', onPress: () => {} },
+          { title: 'Log in', onPress: () => alert('Tap on login') },
+          { title: 'Sign in', onPress: () => alert('Tap on sign in') },
         ]}
         slides={[
           {
@@ -36,6 +32,10 @@ export default function App() {
               uri:
                 'https://a0.muscache.com/im/pictures/861f6982-9fee-4de2-a7c3-2e2545f7f9ba.jpg?aki_policy=xx_large',
             },
+          },
+          {
+            title: 'Photo 4 with more',
+            imageSource: require('./assets/local_image.png'),
           },
         ]}
       />

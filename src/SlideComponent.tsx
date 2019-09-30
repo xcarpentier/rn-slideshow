@@ -44,7 +44,7 @@ export function SlideComponent({
       <View style={styles.titleContainer}>
         <Text
           style={{
-            color: theme.primaryColor,
+            color: theme.onBackgroundTextColor,
             fontSize: theme.fontSize,
             fontFamily: theme.fontFamily,
           }}
