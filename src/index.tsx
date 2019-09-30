@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, ReactNode } from 'react'
 import {
   View,
   StyleSheet,
@@ -41,9 +41,15 @@ export interface SlideshowProps {
   slides: Slide[]
   callToActions?: ButtonProps[]
   theme?: Theme
+  renderFooter?(): ReactNode
 }
 
-export function Slideshow({ slides, callToActions, theme }: SlideshowProps) {
+export function Slideshow({
+  slides,
+  callToActions,
+  theme,
+  renderFooter,
+}: SlideshowProps) {
   const scrollViewRef = useRef<any>(null)
   const animatedScroll = new Value(0)
 
@@ -84,14 +90,18 @@ export function Slideshow({ slides, callToActions, theme }: SlideshowProps) {
           >
             {slides.map((slide, i) => (
               <SlideComponent
-                key={slide.title}
+                key={`${slide.title || 'no-title'}-${i}`}
                 translateX={getSlideInterpolate(animatedScroll, i)}
                 {...slide}
               />
             ))}
           </Animated.ScrollView>
           <DotContainer {...{ slides, animatedDot }} />
-          <Footer buttons={callToActions || []} />
+          {renderFooter !== undefined ? (
+            renderFooter()
+          ) : (
+            <Footer buttons={callToActions || []} />
+          )}
         </View>
       </ThemeProvider>
     </SliderContext.Provider>

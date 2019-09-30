@@ -1,6 +1,6 @@
 import { ImageSourcePropType } from 'react-native'
 
 export interface Slide {
-  title: string
+  title?: string
   imageSource: ImageSourcePropType
 }

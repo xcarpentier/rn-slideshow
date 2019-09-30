@@ -59,12 +59,13 @@ export default function App() {
 - slides: Slide[]
 - callToActions?: ButtonProps[]
 - theme?: Theme
+- renderFooter?(): ReactNode
 
 # Slide
 
 ```ts
 interface Slide {
-  title: string
+  title?: string
   imageSource: ImageSourcePropType
 }
 ```

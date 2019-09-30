@@ -27,7 +27,7 @@ export default function App() {
             },
           },
           {
-            title: 'Photo 3',
+            title: undefined,
             imageSource: {
               uri:
                 'https://a0.muscache.com/im/pictures/861f6982-9fee-4de2-a7c3-2e2545f7f9ba.jpg?aki_policy=xx_large',

@@ -19,8 +19,6 @@ const styles = StyleSheet.create({
   titleContainer: {
     backgroundColor: 'white',
     width: '100%',
-    // paddingTop: 15,
-    // paddingHorizontal: 20,
     alignItems: 'center',
   },
 })
@@ -49,7 +47,7 @@ export function SlideComponent({
             fontFamily: theme.fontFamily,
           }}
         >
-          {title}
+          {title || ''}
         </Text>
       </View>
     </View>
