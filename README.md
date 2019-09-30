@@ -20,7 +20,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <OnBoard
-        theme={{ primaryColor: 'green', primaryColorLLL: 'lightgreen' }}
+        theme={{ primaryColor: 'green' }}
         callToActions={[
           { title: 'Log in', onPress: () => {} },
           { title: 'Sign in', onPress: () => {} },
@@ -59,3 +59,25 @@ export default function App() {
 - slides: Slide[]
 - callToActions?: ButtonProps[]
 - theme?: Theme
+
+# Slide
+
+```ts
+interface Slide {
+  title: string
+  imageSource: ImageSourcePropType
+}
+```
+
+# Theme
+
+```ts
+type Theme = {
+  primaryColor?: string | undefined
+  primaryColorVariant?: string | undefined
+  backgroundColor?: string | undefined
+  onBackgroundTextColor?: string | undefined
+  fontSize?: number | undefined
+  fontFamily?: string | undefined
+}
+```
