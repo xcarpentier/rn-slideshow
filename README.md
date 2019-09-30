@@ -1,6 +1,6 @@
-<p align="center" >
-    <img alt="rn-slideshow" src="https://media.giphy.com/media/idw0sOfCHnQXA1p19O/giphy.gif" />
-</p>
+| iOS                                                                                               | Android                                                                                           |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| <img  src="https://media.giphy.com/media/JQFk2IyQs98uS5kw3O/giphy.gif" width="200" height="400"/> | <img  src="https://media.giphy.com/media/RiDwb8vlhw9LRb9Rxq/giphy.gif" width="200" height="400"/> |
 
 # rn-slideshow
 

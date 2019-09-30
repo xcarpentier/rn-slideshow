@@ -8,8 +8,8 @@ export default function App() {
       <StatusBar barStyle="light-content" />
       <Slideshow
         callToActions={[
-          { title: 'Log in', onPress: () => alert('Tap on login') },
-          { title: 'Sign in', onPress: () => alert('Tap on sign in') },
+          { title: 'Log In', onPress: () => alert('Tap on login') },
+          { title: 'Sign In', onPress: () => alert('Tap on sign in') },
         ]}
         slides={[
           {
@@ -34,7 +34,7 @@ export default function App() {
             },
           },
           {
-            title: 'Photo 4 with more',
+            title: 'Photo 4 with more text and text and text and text and text',
             imageSource: require('./assets/local_image.png'),
           },
         ]}
