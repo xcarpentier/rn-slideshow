@@ -34,7 +34,8 @@ export default function App() {
             },
           },
           {
-            title: 'Photo 4 with more text and text and text and text and text',
+            title:
+              'Photo 4 with more text and text and text and text and text and text and text and text and text and text and text and text',
             imageSource: require('./assets/local_image.png'),
           },
         ]}
