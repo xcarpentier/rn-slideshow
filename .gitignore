@@ -11,3 +11,14 @@ web-build/
 web-report/
 yarn-error.log
 lib/
+App.tsx
+app.json
+.expo-shared/
+.circleci/
+.github/
+.vscode/
+babel.config.js
+yarn.lock
+tsconfig.json
+tslint.json
+src/
