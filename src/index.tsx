@@ -1,8 +1,15 @@
-import * as React from 'react'
-import { View, StyleSheet, Dimensions, ButtonProps } from 'react-native'
+import React, { useRef } from 'react'
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  ButtonProps,
+  ScrollView,
+} from 'react-native'
 import { SlideComponent } from './SlideComponent'
 import { Slide } from './Slide'
 import { Footer } from './Footer'
+import { SliderContext } from './SliderContext'
 import { DotContainer } from './DotContainer'
 import Animated from 'react-native-reanimated'
 import { Theme, ThemeProvider, DEFAULT_THEME } from './theming'
@@ -37,6 +44,7 @@ export interface OnBoardProps {
 }
 
 export function Slideshow({ slides, callToActions, theme }: OnBoardProps) {
+  const scrollViewRef = useRef<any>(null)
   const animatedScroll = new Value(0)
 
   const animatedDot = new Value(0)
@@ -51,32 +59,41 @@ export function Slideshow({ slides, callToActions, theme }: OnBoardProps) {
     } as any,
   ])
 
+  const moveTo = (page: number) => {
+    if (scrollViewRef && scrollViewRef.current) {
+      scrollViewRef.current!.getNode().scrollTo({ y: 0, x: page * width })
+    }
+  }
+
   return (
-    <ThemeProvider theme={{ ...DEFAULT_THEME, ...theme }}>
-      <View style={styles.container}>
-        <Animated.ScrollView
-          horizontal
-          bounces={false}
-          scrollsToTop={false}
-          pagingEnabled
-          decelerationRate="fast"
-          automaticallyAdjustContentInsets={false}
-          scrollEventThrottle={1}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          onScroll={onScroll}
-        >
-          {slides.map((slide, i) => (
-            <SlideComponent
-              key={slide.title}
-              translateX={getSlideInterpolate(animatedScroll, i)}
-              {...slide}
-            />
-          ))}
-        </Animated.ScrollView>
-        <DotContainer {...{ slides, animatedDot }} />
-        <Footer buttons={callToActions || []} />
-      </View>
-    </ThemeProvider>
+    <SliderContext.Provider value={{ moveTo }}>
+      <ThemeProvider theme={{ ...DEFAULT_THEME, ...theme }}>
+        <View style={styles.container}>
+          <Animated.ScrollView
+            ref={scrollViewRef}
+            horizontal
+            bounces={false}
+            scrollsToTop={false}
+            pagingEnabled
+            decelerationRate="fast"
+            automaticallyAdjustContentInsets={false}
+            scrollEventThrottle={1}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            onScroll={onScroll}
+          >
+            {slides.map((slide, i) => (
+              <SlideComponent
+                key={slide.title}
+                translateX={getSlideInterpolate(animatedScroll, i)}
+                {...slide}
+              />
+            ))}
+          </Animated.ScrollView>
+          <DotContainer {...{ slides, animatedDot }} />
+          <Footer buttons={callToActions || []} />
+        </View>
+      </ThemeProvider>
+    </SliderContext.Provider>
   )
 }

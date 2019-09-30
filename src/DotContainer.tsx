@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Slide } from './Slide'
 import { Row } from './Row'
+import { SliderContext, SliderContextParam } from './SliderContext'
 import Animated from 'react-native-reanimated'
 import { useTheme } from './theming'
 
@@ -70,43 +71,53 @@ export function DotContainer({ slides, animatedDot }: DotContainer) {
   const slideRange: number[] = [...Array(slides.length).keys()]
   const theme = useTheme()
   return (
-    <>
-      <View style={styles.container} pointerEvents="none">
-        <Row style={styles.dotContainer}>
-          {slideRange.map(level => (
-            <View
-              key={`dot-${level}`}
-              style={[
-                styles.dot,
-                { backgroundColor: theme.primaryColorVariant },
-              ]}
-            />
-          ))}
-        </Row>
-        <Row style={styles.dotContainer}>
-          {slideRange.map(level => (
-            <Animated.View
-              key={`dotOverlay-${level}`}
-              style={[
-                styles.dot,
-                styles.dotActive,
-                { backgroundColor: theme.primaryColor },
-                {
-                  opacity: getDotInterpolate(animatedDot, level),
-                  transform: [
+    <SliderContext.Consumer>
+      {({ moveTo }: SliderContextParam) => (
+        <View style={styles.container} pointerEvents="box-none">
+          <Row style={styles.dotContainer} pointerEvents="box-none">
+            {slideRange.map(level => (
+              <TouchableOpacity
+                key={`dotOverlay-${level}`}
+                onPress={() => moveTo && moveTo(level)}
+              >
+                <View
+                  style={[
+                    styles.dot,
+                    { backgroundColor: theme.primaryColorVariant },
+                  ]}
+                />
+              </TouchableOpacity>
+            ))}
+          </Row>
+          <Row style={styles.dotContainer} pointerEvents="box-none">
+            {slideRange.map(level => (
+              <TouchableOpacity
+                key={`dotOverlay-${level}`}
+                onPress={() => moveTo && moveTo(level)}
+              >
+                <Animated.View
+                  style={[
+                    styles.dot,
+                    styles.dotActive,
+                    { backgroundColor: theme.primaryColor },
                     {
-                      scaleX: getDotInterpolateScale(animatedDot, level),
-                    },
-                    {
-                      scaleY: getDotInterpolateScale(animatedDot, level),
-                    },
-                  ],
-                } as any,
-              ]}
-            />
-          ))}
-        </Row>
-      </View>
-    </>
+                      opacity: getDotInterpolate(animatedDot, level),
+                      transform: [
+                        {
+                          scaleX: getDotInterpolateScale(animatedDot, level),
+                        },
+                        {
+                          scaleY: getDotInterpolateScale(animatedDot, level),
+                        },
+                      ],
+                    } as any,
+                  ]}
+                />
+              </TouchableOpacity>
+            ))}
+          </Row>
+        </View>
+      )}
+    </SliderContext.Consumer>
   )
 }
