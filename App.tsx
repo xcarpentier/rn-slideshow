@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { StyleSheet, View, StatusBar } from 'react-native'
 import { Slideshow } from './src/index'
 
