@@ -37,13 +37,13 @@ const getSlideInterpolate = (
   })
 }
 
-export interface OnBoardProps {
+export interface SlideshowProps {
   slides: Slide[]
   callToActions?: ButtonProps[]
   theme?: Theme
 }
 
-export function Slideshow({ slides, callToActions, theme }: OnBoardProps) {
+export function Slideshow({ slides, callToActions, theme }: SlideshowProps) {
   const scrollViewRef = useRef<any>(null)
   const animatedScroll = new Value(0)
 
