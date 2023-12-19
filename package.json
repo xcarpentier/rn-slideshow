@@ -28,7 +28,7 @@
   "dependencies": {
     "@callstack/react-theme-provider": "3.0.3",
     "react-native-iphone-x-helper": "1.2.1",
-    "react-native-web": "^0.11.7",
+    "react-native-web": "^0.16.0",
     "react-native-reanimated": "https://github.com/EvanBacon/react-native-reanimated#6d32a89cf8fc96d8f04f3252852b8b7427c060ad"
   },
   "devDependencies": {
